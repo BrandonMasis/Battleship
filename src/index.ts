@@ -1,11 +1,7 @@
-// import "./index.scss"
-
-console.log("Hello World!");
+// import "./styles/index.scss"
 
 
-const sum = (a:number,b:number) => {
-    return a+b
-}
 
 
-export{sum}
+
+// export{sum}
