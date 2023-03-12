@@ -1,8 +1,15 @@
+interface Coordinate{
+  x: number;
+  y: number;
+  isHit?: boolean;
+}
+
 interface Ship {
     length: number;
     timesHit: number;
     hit: () => void;
     isSunk: () => boolean;
+    coordinates: Coordinate[];
   }
   
   function createShip(length: number): Ship {
@@ -16,25 +23,19 @@ interface Ship {
     const isSunk = (): boolean => {
       return timesHit >= length;
     };
+
+    let coordinates: Coordinate[] = [];
   
     const ship: Ship = {
       length,
       timesHit,
       hit,
       isSunk,
+      coordinates
     };
   
     return ship;
   }
   
-  const carlos: Ship = createShip(3);
-  
-  carlos.hit();
-  carlos.hit();
-  carlos.hit();
 
-  
-  console.log(carlos.timesHit);
-  console.log(carlos.isSunk());
-  
-  export{createShip, Ship}
+export{Ship,Coordinate,createShip}
